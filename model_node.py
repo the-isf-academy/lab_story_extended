@@ -38,3 +38,22 @@ class Node():
         return None
     
 
+
+if __name__ == "__main__":
+    n1 = Node(
+        id = "My story",
+        option_title="cks",
+        description="You enter in CKS"
+    )
+
+    n2 = Node(
+        id = "b2",
+        option_title="Go to B2",
+        description="You walk up the stairs to B2"
+    )
+
+    print(n1)
+
+    n1.add_child(n2)
+
+    print(n1.children)
