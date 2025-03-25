@@ -9,15 +9,23 @@ class Story():
         self.current_node =  self.first_node  #the current Node of your story
         
     def get_current_node(self):
+        # Returns the current node of the story.
+
         return self.current_node
 
     def get_current_children(self):
+        # Returns the a list with the children of the current_node
+
         return self.current_node.children
 
     def set_current_node(self,chosen_node):
+        # Sets the current_node to the chosen node
+
         self.current_node = chosen_node
 
     def add_new_child(self, parent_id, child_id, child_option_title, child_description):
+        # Adds a new child Node to the parent_node with the given ID.
+
         parent_node = self.current_node.find(parent_id)
 
         new_child_node = Node(
@@ -29,15 +37,17 @@ class Story():
         parent_node.add_child(new_child_node)
   
     def is_running(self):
+        # checks if the story is still running
+
         return len(self.current_node.children) > 0
     
 
 if __name__ == "__main__":
     example_story = Story(
         title = "My story",
-        start_id="cks",
-        start_option_title="cks",
-        start_description="You enter in CKS"
+        first_id="cks",
+        first_option_title="cks",
+        first_description="You enter in CKS"
     )
 
     example_story.add_new_child(
